@@ -28,6 +28,19 @@ public class Actividad3497
     public ArrayList<String> devolverPalabraMasLarga(ArrayList<String> palabras)
     {
         ArrayList<String> palabrasMasLargas = new ArrayList<>();
+        
+        int longitudMaxima = 0;
+        
+        for (String palabra : palabras) {
+            if (palabra.length() > longitudMaxima) {
+                palabrasMasLargas.clear();
+                palabrasMasLargas.add(palabra);
+                longitudMaxima = palabra.length();
+            }
+            else if (palabra.length() == longitudMaxima){
+                palabrasMasLargas.add(palabra);
+            }
+        }
         return palabrasMasLargas;
     }
 }
